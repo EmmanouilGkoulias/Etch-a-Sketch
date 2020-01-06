@@ -18,6 +18,7 @@ const reset = document.querySelector('#reset');
 reset.addEventListener('click', event => {
     for (i = 0; i < div.length; i ++) {
         div[i].style.backgroundColor = 'white';
+        container.removeChild(div[i]);
     }
     size = prompt('How many squares per sides to you want me to make the new grid?');
 });
