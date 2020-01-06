@@ -5,15 +5,22 @@
     padding: 0;
 }
 
-#button {
+ul {
+    list-style: none;
+    display: flex;
+}
+
+#buttons {
     text-align: center;
+}
+
+input {
+    height: auto;
 }
 
 #reset {
     height: 50px;
     width: 70px;
-    /* position: absolute; */
-    /* margin-top: 10px; */
 }
 
 #container {
@@ -35,7 +42,3 @@
     width: calc(100% / 16);
     height: calc(100% / 16);
 }
-
-/* .divs:hover {
-    background-color: hotpink;
-} */
