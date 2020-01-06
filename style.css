@@ -1,0 +1,41 @@
+* {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#button {
+    text-align: center;
+}
+
+#reset {
+    height: 50px;
+    width: 70px;
+    /* position: absolute; */
+    /* margin-top: 10px; */
+}
+
+#container {
+    border: 1px solid orange;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 700px;
+    height: 700px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.divs {
+    position: relative;
+    width: calc(100% / 16);
+    height: calc(100% / 16);
+}
+
+/* .divs:hover {
+    background-color: hotpink;
+} */
