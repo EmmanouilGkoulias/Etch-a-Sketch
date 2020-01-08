@@ -11,24 +11,35 @@ const create = function(size) {
         div[i].style.height = `calc(100% / ${size})`;
         div[i].addEventListener('mouseover', event => {
             div[i].style.backgroundColor = color;
-        });
+            let x = document.querySelector('input[name="color"]:checked');
+            if (x.value == 'black') {
+                color = 'black';
+                div[i].style.backgroundColor = color;
+            }
+            else if (x.value == 'rgb') {
+                color = randomColor();
+                div[i].style.backgroundColor = color;
+            }
+            else {
+                color = 'rgb(0, 0, 0, 0.1)';
+                div[i].style.backgroundColor = color;
+            }
+            });            
         container.appendChild(div[i]);
     };
 }
 
 const inputs = Array.from(document.querySelectorAll('input'));
-document.addEventListener('click', event => {
-    let x = document.querySelector('input[name="color"]:checked');
-    if (x.value == 'black') {
-        color = 'black';
-    }
-    else if (x.value == 'rgb') {
-        color = 'violet';
-    }
-    else {
-        color = 'grey';
-    }
-});
+
+
+const randomColor = function() {
+    let letters = '0123456789ABCDEF';
+    let color = '#';
+    for (i = 0; i < 6; i ++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    };
+    return color;
+}
 
 const reset = document.querySelector('#reset');
 reset.addEventListener('click', event => {
