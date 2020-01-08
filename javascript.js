@@ -9,6 +9,7 @@ const create = function(size) {
         div[i].classList.add('divs');
         div[i].style.width = `calc(100% / ${size})`;
         div[i].style.height = `calc(100% / ${size})`;
+        let opacity = 0;
         div[i].addEventListener('mouseover', event => {
             div[i].style.backgroundColor = color;
             let x = document.querySelector('input[name="color"]:checked');
@@ -21,8 +22,10 @@ const create = function(size) {
                 div[i].style.backgroundColor = color;
             }
             else {
-                color = 'rgb(0, 0, 0, 0.1)';
+                opacity += 0.1;
+                color = `rgb(0, 0, 0, ${opacity})`;
                 div[i].style.backgroundColor = color;
+                console.log(opacity);
             }
             });            
         container.appendChild(div[i]);
